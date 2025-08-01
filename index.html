@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二手拍賣網站</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-tshirt"></i>
+                <h1>二手拍賣網站</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="fitting-room">
+                <!-- 左側模特兒區域 -->
+                <div class="model-section">
+                    <div class="model-container" id="model-container">
+                        <div class="model">
+                            <!-- 模特兒圖像 -->
+                            <img src="model.svg" alt="漫畫風格女性模特兒" id="model-image">
+                            <!-- 當選擇「其他」時顯示的旋轉文字 -->
+                            <div class="rotating-text" id="rotating-text">
+                                <span>你很奴</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右側服裝飾品選擇區域 -->
+                <div class="items-section">
+                    <!-- 大分類選擇 -->
+                    <div class="category-selection">
+                        <h2>服裝飾品分類</h2>
+                        <div class="category-cards">
+                            <div class="category-card" data-category="clothes">
+                                <div class="card-icon">
+                                    <i class="fas fa-tshirt"></i>
+                                </div>
+                                <div class="card-name">衣服</div>
+                            </div>
+                            <div class="category-card" data-category="pants">
+                                <div class="card-icon">
+                                    <i class="fas fa-socks"></i>
+                                </div>
+                                <div class="card-name">褲子</div>
+                            </div>
+                            <div class="category-card" data-category="shoes">
+                                <div class="card-icon">
+                                    <i class="fas fa-shoe-prints"></i>
+                                </div>
+                                <div class="card-name">鞋子</div>
+                            </div>
+                            <div class="category-card" data-category="hats">
+                                <div class="card-icon">
+                                    <i class="fas fa-hat-cowboy"></i>
+                                </div>
+                                <div class="card-name">帽子</div>
+                            </div>
+                            <div class="category-card" data-category="skirts">
+                                <div class="card-icon">
+                                    <i class="fas fa-female"></i>
+                                </div>
+                                <div class="card-name">裙子</div>
+                            </div>
+                            <div class="category-card" data-category="other">
+                                <div class="card-icon">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                </div>
+                                <div class="card-name">其他</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 子分類選擇 -->
+                    <div class="subcategory-selection" id="subcategory-selection">
+                        <h3>選擇款式</h3>
+                        <div class="subcategory-items" id="subcategory-items">
+                            <!-- 子分類項目會通過JavaScript動態生成 -->
+                        </div>
+                    </div>
+
+                    <!-- 顏色選擇 -->
+                    <div class="color-selection" id="color-selection">
+                        <h3>選擇顏色</h3>
+                        <div class="color-options">
+                            <div class="color-option" data-color="red" style="background-color: #ff0000;"></div>
+                            <div class="color-option" data-color="blue" style="background-color: #0000ff;"></div>
+                            <div class="color-option" data-color="green" style="background-color: #00ff00;"></div>
+                            <div class="color-option" data-color="yellow" style="background-color: #ffff00;"></div>
+                            <div class="color-option" data-color="purple" style="background-color: #800080;"></div>
+                            <div class="color-option" data-color="black" style="background-color: #000000;"></div>
+                            <div class="color-option" data-color="white" style="background-color: #ffffff;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 彈出提示框 -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <p>很奴還不去上班</p>
+            <button id="modal-close">關閉</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2023 二手拍賣網站. 版權所有.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

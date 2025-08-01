@@ -1,0 +1,373 @@
+/* 基本樣式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 頁首樣式 */
+header {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    font-size: 2rem;
+    margin-right: 10px;
+    color: #fff;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* 主要內容區域 */
+main {
+    padding: 40px 0;
+    min-height: calc(100vh - 150px);
+}
+
+/* 試衣間樣式 */
+.fitting-room {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* 模特兒區域 */
+.model-section {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.model-container {
+    width: 100%;
+    max-width: 400px;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.model {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.model img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* 旋轉文字樣式 */
+.rotating-text {
+    display: none;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #ff6b6b;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 200px;
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 服裝飾品選擇區域 */
+.items-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* 大分類選擇 */
+.category-selection {
+    margin-bottom: 30px;
+}
+
+.category-selection h2 {
+    margin-bottom: 20px;
+    color: #ff6b6b;
+    font-size: 1.8rem;
+}
+
+.category-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.category-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.category-card.active {
+    transform: scale(1.1);
+    box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+    border: 2px solid #ff6b6b;
+    z-index: 1;
+}
+
+.category-card.inactive {
+    opacity: 0.5;
+}
+
+.card-icon {
+    font-size: 2rem;
+    color: #ff6b6b;
+    margin-bottom: 10px;
+}
+
+.card-name {
+    font-weight: 600;
+}
+
+/* 子分類選擇 */
+.subcategory-selection {
+    margin-bottom: 30px;
+    display: none;
+}
+
+.subcategory-selection h3 {
+    margin-bottom: 15px;
+    color: #ff6b6b;
+}
+
+.subcategory-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.subcategory-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.subcategory-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.subcategory-item.active {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    border: 2px solid #ff6b6b;
+}
+
+.subcategory-item.inactive {
+    opacity: 0.5;
+}
+
+.subcategory-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+.subcategory-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* 顏色選擇 */
+.color-selection {
+    margin-bottom: 30px;
+    display: none;
+}
+
+.color-selection h3 {
+    margin-bottom: 15px;
+    color: #ff6b6b;
+}
+
+.color-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.color-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #ddd;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.active {
+    transform: scale(1.2);
+    border: 3px solid #ff6b6b;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+/* 白色選項特殊處理 */
+.color-option[data-color="white"] {
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+}
+
+/* 彈出提示框 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+.modal-content button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #ff8e8e;
+}
+
+/* 頁尾樣式 */
+footer {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .fitting-room {
+        flex-direction: column;
+    }
+    
+    .model-container {
+        height: 500px;
+        margin-bottom: 20px;
+    }
+    
+    .category-cards {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .model-container {
+        height: 400px;
+    }
+    
+    .category-cards {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+    
+    .subcategory-items {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+    
+    .card-icon {
+        font-size: 1.5rem;
+    }
+    
+    .card-name {
+        font-size: 0.9rem;
+    }
+}
